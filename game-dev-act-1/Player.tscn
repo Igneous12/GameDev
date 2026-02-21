@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://cokuctuvounr1"]
+
+[ext_resource type="Script" uid="uid://bs4ehqqgqh82s" path="res://character_body_2d.gd" id="1_kpjcp"]
+[ext_resource type="Texture2D" uid="uid://p2d20uyakye4" path="res://brb.jpeg" id="2_kne1u"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kpjcp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpjcp"]
+size = Vector2(65, 48.5)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(3, 22)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-2, 36)
+shape = SubResource("WorldBoundaryShape2D_kpjcp")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_kpjcp")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(-1.5258789e-05, -28.000004)
+scale = Vector2(0.25510204, 0.25510204)
+texture = ExtResource("2_kne1u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, -27)
+shape = SubResource("RectangleShape2D_kpjcp")
